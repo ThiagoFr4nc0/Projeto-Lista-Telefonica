@@ -1,0 +1,3 @@
+/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles/Projeto_Lista_Telefonica.dir
