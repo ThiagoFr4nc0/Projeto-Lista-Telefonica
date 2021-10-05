@@ -81,12 +81,12 @@ clean: CMakeFiles/Projeto_Lista_Telefonica.dir/clean
 CMakeFiles/Projeto_Lista_Telefonica.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target Projeto_Lista_Telefonica"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4 "Built target Projeto_Lista_Telefonica"
 .PHONY : CMakeFiles/Projeto_Lista_Telefonica.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Projeto_Lista_Telefonica.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Projeto_Lista_Telefonica.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/Projeto_Lista_Telefonica.dir/rule

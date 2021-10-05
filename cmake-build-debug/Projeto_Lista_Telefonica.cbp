@@ -76,7 +76,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.c">
+			<Option target="Projeto_Lista_Telefonica"/>
+		</Unit>
+		<Unit filename="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.h">
+			<Option target="Projeto_Lista_Telefonica"/>
+		</Unit>
 		<Unit filename="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/main.c">
+			<Option target="Projeto_Lista_Telefonica"/>
+		</Unit>
+		<Unit filename="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.c">
+			<Option target="Projeto_Lista_Telefonica"/>
+		</Unit>
+		<Unit filename="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.h">
 			<Option target="Projeto_Lista_Telefonica"/>
 		</Unit>
 		<Unit filename="/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/CMakeLists.txt">

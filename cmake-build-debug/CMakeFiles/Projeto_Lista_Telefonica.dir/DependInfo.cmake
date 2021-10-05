@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.c" "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles/Projeto_Lista_Telefonica.dir/lista.c.o"
   "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/main.c" "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles/Projeto_Lista_Telefonica.dir/main.c.o"
+  "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.c" "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug/CMakeFiles/Projeto_Lista_Telefonica.dir/utilitarios.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

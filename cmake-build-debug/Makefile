@@ -129,6 +129,30 @@ Projeto_Lista_Telefonica/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/build
 .PHONY : Projeto_Lista_Telefonica/fast
 
+lista.o: lista.c.o
+.PHONY : lista.o
+
+# target to build an object file
+lista.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/lista.c.o
+.PHONY : lista.c.o
+
+lista.i: lista.c.i
+.PHONY : lista.i
+
+# target to preprocess a source file
+lista.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/lista.c.i
+.PHONY : lista.c.i
+
+lista.s: lista.c.s
+.PHONY : lista.s
+
+# target to generate assembly for a file
+lista.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/lista.c.s
+.PHONY : lista.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -153,6 +177,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/main.c.s
 .PHONY : main.c.s
 
+utilitarios.o: utilitarios.c.o
+.PHONY : utilitarios.o
+
+# target to build an object file
+utilitarios.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/utilitarios.c.o
+.PHONY : utilitarios.c.o
+
+utilitarios.i: utilitarios.c.i
+.PHONY : utilitarios.i
+
+# target to preprocess a source file
+utilitarios.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/utilitarios.c.i
+.PHONY : utilitarios.c.i
+
+utilitarios.s: utilitarios.c.s
+.PHONY : utilitarios.s
+
+# target to generate assembly for a file
+utilitarios.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_Lista_Telefonica.dir/build.make CMakeFiles/Projeto_Lista_Telefonica.dir/utilitarios.c.s
+.PHONY : utilitarios.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Projeto_Lista_Telefonica"
+	@echo "... lista.o"
+	@echo "... lista.i"
+	@echo "... lista.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... utilitarios.o"
+	@echo "... utilitarios.i"
+	@echo "... utilitarios.s"
 .PHONY : help
 
 
