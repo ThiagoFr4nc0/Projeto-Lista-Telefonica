@@ -113,6 +113,61 @@ ERRO_LISTA agenda_buscar(const LISTA *lista, REGISTRO *registro, CRITERIO opcao)
 
     return ERRO_SUCESSO;
 }
+ERRO_LISTA agenda_buscar_email(const LISTA *lista, REGISTRO *registro, CRITERIO opcao)
+{
+    NODO *aux;
+
+    aux = lista->inicio;
+    switch (opcao)
+    {
+        case EMAIL:
+            while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
+            {
+                aux = aux->proximo;
+            }
+            break;
+        case TELEFONE:
+            break;
+        case NOME:
+            break;
+    }
+    if (aux == NULL) // chegou no final da lista
+    {
+        return ERRO_CHAVE_INEXISTENTE;
+    }
+
+    *registro = aux->dado;
+
+    return ERRO_SUCESSO;
+}
+
+ERRO_LISTA agenda_buscar_telefone(const LISTA *lista, REGISTRO *registro, CRITERIO opcao)
+{
+    NODO *aux;
+
+    aux = lista->inicio;
+    switch (opcao)
+    {
+        case TELEFONE:
+            while ((aux != NULL) && (strncmp(registro->telefone, aux->dado.telefone, strlen(registro->telefone)) != 0))
+            {
+                aux = aux->proximo;
+            }
+            break;
+        case EMAIL:
+            break;
+        case NOME:
+            break;
+    }
+    if (aux == NULL) // chegou no final da lista
+    {
+        return ERRO_CHAVE_INEXISTENTE;
+    }
+
+    *registro = aux->dado;
+
+    return ERRO_SUCESSO;
+}
 
 void agenda_mostrar(const LISTA *lista)
 {

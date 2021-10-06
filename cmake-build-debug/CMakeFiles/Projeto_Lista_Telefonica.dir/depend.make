@@ -6,6 +6,7 @@ CMakeFiles/Projeto_Lista_Telefonica.dir/lista.c.o: \
  ../lista.h
 CMakeFiles/Projeto_Lista_Telefonica.dir/main.c.o: \
  ../lista.h \
- ../main.c
+ ../main.c \
+ ../utilitarios.h
 CMakeFiles/Projeto_Lista_Telefonica.dir/utilitarios.c.o: \
  ../utilitarios.c

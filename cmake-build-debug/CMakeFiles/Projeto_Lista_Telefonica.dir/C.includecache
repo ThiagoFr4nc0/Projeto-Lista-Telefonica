@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.c
-stdio.h
--
-stdlib.h
--
-string.h
--
-lista.h
-/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.h
-
 /home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.h
 
 /home/squads/Trabalhos IF/Projeto-Lista-Telefonica/main.c
@@ -26,17 +16,7 @@ utilitarios.h
 lista.h
 /home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.h
 
-/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.c
-stdio.h
--
-stdlib.h
--
+/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.h
 stdbool.h
 -
-string.h
--
-errno.h
--
-utilitarios.h
-/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.h
 
