@@ -6,14 +6,18 @@
 
 #IncludeRegexTransform: 
 
-/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.h
-
-/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/main.c
+/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.c
 stdio.h
+-
+stdlib.h
 -
 utilitarios.h
 /home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.h
+string.h
+-
 lista.h
+/home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.h
+
 /home/squads/Trabalhos IF/Projeto-Lista-Telefonica/lista.h
 
 /home/squads/Trabalhos IF/Projeto-Lista-Telefonica/utilitarios.h

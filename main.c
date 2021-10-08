@@ -40,7 +40,7 @@ int main()
                 break;
             case 3:
                 ler_String(dado.telefone, "Informe o telefone do contato", 97);
-                if (agenda_buscar_telefone(&agenda, &dado, TELEFONE) == ERRO_CHAVE_INEXISTENTE)
+                if (agenda_buscar(&agenda, &dado, TELEFONE) == ERRO_CHAVE_INEXISTENTE)
                 {
                     printf("Nao temos esse contato na agenda\n");
                     continue;
@@ -49,7 +49,7 @@ int main()
                 break;
             case 4:
                 ler_String(dado.email, "Informe o email do contato", 40);
-                if (agenda_buscar_email(&agenda, &dado, EMAIL) == ERRO_CHAVE_INEXISTENTE)
+                if (agenda_buscar(&agenda, &dado, EMAIL) == ERRO_CHAVE_INEXISTENTE)
                 {
                     printf("Nao temos esse contato na agenda\n");
                     continue;
@@ -57,8 +57,21 @@ int main()
                 mostra_contato(&dado);
                 break;
             case 5:
+                ler_String(dado.email, "Informe o email do contato", 40);
+                if (agenda_remover(&agenda, &dado.email) == ERRO_CHAVE_INEXISTENTE) {
+                        printf("Nao temos esse contato na agenda\n");
+                        continue;
+                    }
+                agenda_mostrar(&agenda);
                 break;
             case 6:
+                ler_String(dado.email, "Informe o email do contato", 40);
+                if (agenda_buscar(&agenda, &dado, EMAIL) == ERRO_CHAVE_INEXISTENTE)
+                {
+                    printf("Nao temos esse contato na agenda\n");
+                    continue;
+                }
+                mostra_contato(&dado);
                 break;
             case 7:
                 agenda_mostrar(&agenda);

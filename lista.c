@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include "utilitarios.h"
 #include <string.h>
 #include "lista.h"
 
@@ -76,13 +77,53 @@ ERRO_LISTA agenda_inserir(LISTA *lista, REGISTRO dado)
     return ERRO_SUCESSO;
 }
 
-ERRO_LISTA agenda_remover(LISTA *lista, char *email)
+ERRO_LISTA agenda_remover(LISTA *lista, REGISTRO *registro)
 {
-    return ERRO_SUCESSO;
+        NODO *prox,*temp,*aux;
+
+        aux = lista->inicio;
+        temp = lista->inicio;
+
+        while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
+        {
+            temp = aux;
+            aux = aux->proximo;
+        }
+
+        if (aux == NULL) // chegou no final da lista
+        {
+            return ERRO_CHAVE_INEXISTENTE;
+        }
+        prox = aux->proximo;
+        temp->proximo = prox;
+        free(aux);
+
+        return ERRO_SUCESSO;
 }
 
 ERRO_LISTA agenda_alterar_contato(LISTA *lista, REGISTRO *registro)
 {
+    NODO *aux;
+
+    aux = lista->inicio;
+
+    while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
+    {
+        aux = aux->proximo;
+    }
+
+    if (aux == NULL) // chegou no final da lista
+    {
+        return ERRO_CHAVE_INEXISTENTE;
+    }
+    *registro = aux->dado;
+    ler_String(aux->dado.nome, "Informe o nome do contato", 35);
+    ler_String(aux->dado.email, "Informe o email do contato", 40);
+    ler_Inteiro(aux->dado.ddd, "Informe o DDD do contato", 11, 97);
+    ler_String(aux->dado.telefone, "Informe o telefone", 10);
+    *registro = aux->dado;
+
+
     return ERRO_SUCESSO;
 }
 
@@ -100,63 +141,16 @@ ERRO_LISTA agenda_buscar(const LISTA *lista, REGISTRO *registro, CRITERIO opcao)
             }
             break;
         case TELEFONE:
-            break;
-        case EMAIL:
-            break;
-    }
-    if (aux == NULL) // chegou no final da lista
-    {
-        return ERRO_CHAVE_INEXISTENTE;
-    }
-
-    *registro = aux->dado;
-
-    return ERRO_SUCESSO;
-}
-ERRO_LISTA agenda_buscar_email(const LISTA *lista, REGISTRO *registro, CRITERIO opcao)
-{
-    NODO *aux;
-
-    aux = lista->inicio;
-    switch (opcao)
-    {
-        case EMAIL:
-            while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
-            {
-                aux = aux->proximo;
-            }
-            break;
-        case TELEFONE:
-            break;
-        case NOME:
-            break;
-    }
-    if (aux == NULL) // chegou no final da lista
-    {
-        return ERRO_CHAVE_INEXISTENTE;
-    }
-
-    *registro = aux->dado;
-
-    return ERRO_SUCESSO;
-}
-
-ERRO_LISTA agenda_buscar_telefone(const LISTA *lista, REGISTRO *registro, CRITERIO opcao)
-{
-    NODO *aux;
-
-    aux = lista->inicio;
-    switch (opcao)
-    {
-        case TELEFONE:
             while ((aux != NULL) && (strncmp(registro->telefone, aux->dado.telefone, strlen(registro->telefone)) != 0))
             {
                 aux = aux->proximo;
             }
             break;
         case EMAIL:
-            break;
-        case NOME:
+            while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
+            {
+                aux = aux->proximo;
+            }
             break;
     }
     if (aux == NULL) // chegou no final da lista
@@ -168,7 +162,6 @@ ERRO_LISTA agenda_buscar_telefone(const LISTA *lista, REGISTRO *registro, CRITER
 
     return ERRO_SUCESSO;
 }
-
 void agenda_mostrar(const LISTA *lista)
 {
     NODO *aux;

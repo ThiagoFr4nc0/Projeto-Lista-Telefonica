@@ -44,11 +44,9 @@ ERRO_LISTA agenda_destruir (LISTA *lista);
 unsigned int agenda_tamanho(const LISTA* lista);
 
 ERRO_LISTA agenda_inserir(LISTA *lista, REGISTRO dado);
-ERRO_LISTA agenda_remover(LISTA *lista, char *email);
+ERRO_LISTA agenda_remover(LISTA *lista,REGISTRO *registro);
 ERRO_LISTA agenda_alterar_contato(LISTA *lista, REGISTRO *registro);
 ERRO_LISTA agenda_buscar(const LISTA *lista, REGISTRO *registro, CRITERIO opcao);
-ERRO_LISTA agenda_buscar_email(const LISTA *lista, REGISTRO *registro, CRITERIO opcao);
-ERRO_LISTA agenda_buscar_telefone(const LISTA *lista, REGISTRO *registro, CRITERIO opcao);
 void mostra_contato (const REGISTRO* dado);
 void agenda_mostrar(const LISTA *lista);
 #endif //AGENDA_LISTA_H

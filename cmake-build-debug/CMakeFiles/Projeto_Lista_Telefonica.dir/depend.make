@@ -3,7 +3,8 @@
 
 CMakeFiles/Projeto_Lista_Telefonica.dir/lista.c.o: \
  ../lista.c \
- ../lista.h
+ ../lista.h \
+ ../utilitarios.h
 CMakeFiles/Projeto_Lista_Telefonica.dir/main.c.o: \
  ../lista.h \
  ../main.c \
