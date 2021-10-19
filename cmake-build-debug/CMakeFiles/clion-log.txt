@@ -1,4 +1,4 @@
-/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica"
+/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/home/squads/Trabalhos IF/Projeto-Lista-Telefonica"
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/squads/Trabalhos IF/Projeto-Lista-Telefonica/cmake-build-debug

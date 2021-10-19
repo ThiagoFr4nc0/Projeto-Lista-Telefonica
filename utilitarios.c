@@ -1,6 +1,4 @@
-//
-// Created by danie on 01/10/2021.
-//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

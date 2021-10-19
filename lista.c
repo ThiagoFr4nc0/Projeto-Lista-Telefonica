@@ -1,6 +1,4 @@
-//
-// Created by danie on 01/10/2021.
-//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "utilitarios.h"
@@ -79,31 +77,38 @@ ERRO_LISTA agenda_inserir(LISTA *lista, REGISTRO dado)
 
 ERRO_LISTA agenda_remover(LISTA *lista, REGISTRO *registro)
 {
-        NODO *prox,*temp,*aux;
+    NODO *aux, *temp;
 
-        aux = lista->inicio;
-        temp = lista->inicio;
+    aux = lista->inicio;
+    temp = NULL;
 
-        while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
-        {
-            temp = aux;
-            aux = aux->proximo;
-        }
+    while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
+    {
+        temp = aux;
+        aux = aux->proximo;
+    }
 
-        if (aux == NULL) // chegou no final da lista
-        {
-            return ERRO_CHAVE_INEXISTENTE;
-        }
-        prox = aux->proximo;
-        temp->proximo = prox;
-        free(aux);
+    if (aux == NULL) // chegou no final da lista
+    {
+        return ERRO_CHAVE_INEXISTENTE;
+    }
+    if(temp == NULL){
+        lista->inicio = aux->proximo;
+    }else{
+        temp->proximo = aux->proximo;
+    }
+    if(aux->proximo == NULL){
+        lista->final = temp;
+    }
+    free(aux);
 
-        return ERRO_SUCESSO;
+    return ERRO_SUCESSO;
 }
 
 ERRO_LISTA agenda_alterar_contato(LISTA *lista, REGISTRO *registro)
 {
     NODO *aux;
+    long ddd;
 
     aux = lista->inicio;
 
@@ -117,10 +122,11 @@ ERRO_LISTA agenda_alterar_contato(LISTA *lista, REGISTRO *registro)
         return ERRO_CHAVE_INEXISTENTE;
     }
     *registro = aux->dado;
-    ler_String(aux->dado.nome, "Informe o nome do contato", 35);
-    ler_String(aux->dado.email, "Informe o email do contato", 40);
-    ler_Inteiro(aux->dado.ddd, "Informe o DDD do contato", 11, 97);
-    ler_String(aux->dado.telefone, "Informe o telefone", 10);
+    ler_String(aux->dado.nome, "Informe o novo nome do contato", 35);
+    ler_String(aux->dado.email, "Informe o novo email do contato", 40);
+    while (!ler_Inteiro(&ddd, "Informe o DDD do contato", 11, 97));
+    aux->dado.ddd = ddd;
+    ler_String(aux->dado.telefone, "Informe o novo telefone", 10);
     *registro = aux->dado;
 
 

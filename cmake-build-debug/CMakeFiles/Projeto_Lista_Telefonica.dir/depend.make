@@ -10,4 +10,5 @@ CMakeFiles/Projeto_Lista_Telefonica.dir/main.c.o: \
  ../main.c \
  ../utilitarios.h
 CMakeFiles/Projeto_Lista_Telefonica.dir/utilitarios.c.o: \
- ../utilitarios.c
+ ../utilitarios.c \
+ ../utilitarios.h
