@@ -79,30 +79,40 @@ ERRO_LISTA agenda_remover(LISTA *lista, REGISTRO *registro)
 {
     NODO *aux, *temp;
 
-    aux = lista->inicio;
-    temp = NULL;
+    long valida;
 
+
+    temp = NULL;
+    aux = lista->inicio;
     while ((aux != NULL) && (strncmp(registro->email, aux->dado.email, strlen(registro->email)) != 0))
     {
         temp = aux;
         aux = aux->proximo;
     }
-
     if (aux == NULL) // chegou no final da lista
     {
         return ERRO_CHAVE_INEXISTENTE;
     }
+    mostra_contato(&(aux->dado));
+    ler_Inteiro(&valida, "deseja remover esse contato se sim digite(1) se não digite(0)!!!", 0 , 1); // valida remove contato
+    if(valida == 0){
+        return ERRO_CHAVE_INEXISTENTE;
+    }
+
     if(temp == NULL){
         lista->inicio = aux->proximo;
     }else{
         temp->proximo = aux->proximo;
     }
-    if(aux->proximo == NULL){
-        lista->final = temp;
-    }
-    free(aux);
 
+    if(aux->proximo == NULL){
+        lista->final = aux->proximo;
+    }
+
+    free(aux);
+    lista->num_elementos = lista->num_elementos - 1;
     return ERRO_SUCESSO;
+
 }
 
 ERRO_LISTA agenda_alterar_contato(LISTA *lista, REGISTRO *registro)
@@ -121,14 +131,15 @@ ERRO_LISTA agenda_alterar_contato(LISTA *lista, REGISTRO *registro)
     {
         return ERRO_CHAVE_INEXISTENTE;
     }
+    mostra_contato(&aux->dado);
     *registro = aux->dado;
-    ler_String(aux->dado.nome, "Informe o novo nome do contato", 35);
-    ler_String(aux->dado.email, "Informe o novo email do contato", 40);
-    while (!ler_Inteiro(&ddd, "Informe o DDD do contato", 11, 97));
+    ler_String(aux->dado.nome, "Informe a alterasao do nome do contato", 35);
+    ler_String(aux->dado.email, "Informe a alterasao do email do contato", 40);
+    while (!ler_Inteiro(&ddd, "Informe a alterasao do DDD do contato", 11, 97));
     aux->dado.ddd = ddd;
-    ler_String(aux->dado.telefone, "Informe o novo telefone", 10);
+    ler_String(aux->dado.telefone, "Informe a alterasao do telefone", 10);
     *registro = aux->dado;
-
+    mostra_contato(&aux->dado);
 
     return ERRO_SUCESSO;
 }

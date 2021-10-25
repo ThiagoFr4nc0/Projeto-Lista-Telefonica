@@ -1,3 +1,7 @@
+// Grupo:
+// Thiago Araujo Franco
+// Hector Decarli Cardoso
+// Gustavo Majid
 #include <stdio.h>
 #include "utilitarios.h"
 #include "lista.h"
@@ -39,6 +43,7 @@ int main()
                 mostra_contato(&dado);
                 break;
             case 3:
+                while (!ler_Inteiro(&ddd, "Informe o DDD do contato", 11, 97));
                 ler_String(dado.telefone, "Informe o telefone do contato", 10);
                 if (agenda_buscar(&agenda, &dado, TELEFONE) == ERRO_CHAVE_INEXISTENTE)
                 {
@@ -48,7 +53,7 @@ int main()
                 mostra_contato(&dado);
                 break;
             case 4:
-                ler_String(dado.email, "Informe o email do contato", 40);
+                ler_String(&dado.email, "Informe o email do contato", 40);
                 if (agenda_buscar(&agenda, &dado, EMAIL) == ERRO_CHAVE_INEXISTENTE)
                 {
                     printf("Nao temos esse contato na agenda\n");
@@ -57,7 +62,7 @@ int main()
                 mostra_contato(&dado);
                 break;
             case 5:
-                ler_String(dado.email, "Informe o email do contato", 40);
+                ler_String(&dado.email, "Informe o email do contato", 40);
                 if (agenda_remover(&agenda, &dado.email) == ERRO_CHAVE_INEXISTENTE) {
                         printf("Nao temos esse contato na agenda\n");
                         continue;
@@ -65,13 +70,12 @@ int main()
                 agenda_mostrar(&agenda);
                 break;
             case 6:
-                ler_String(dado.email, "Informe o email do contato", 40);
+                ler_String(&dado.email, "Informe o email do contato", 40);
                 if (agenda_alterar_contato(&agenda, &dado.email) == ERRO_CHAVE_INEXISTENTE)
                 {
                     printf("Nao temos esse contato na agenda\n");
                     continue;
                 }
-                mostra_contato(&dado);
                 break;
             case 7:
                 agenda_mostrar(&agenda);
